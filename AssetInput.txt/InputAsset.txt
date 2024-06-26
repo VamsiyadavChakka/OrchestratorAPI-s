@@ -1,0 +1,5 @@
+{
+    "Name": "IntegerAsset",
+    "ValueType": "Int32",
+    "IntValue": 42
+}
