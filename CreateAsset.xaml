@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>673,1559</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>673,1601</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Assets_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,15 +115,15 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Creating the Assets" sap:VirtualizedContainerService.HintSize="612,1494" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="Creating the Assets" sap:VirtualizedContainerService.HintSize="612,1536" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="550,1406" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="550,1448" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Create_Asset" sap:VirtualizedContainerService.HintSize="512,1155" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Create_Asset" sap:VirtualizedContainerService.HintSize="512,1197" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Int32" Name="statusCode">
               <sap:WorkflowViewStateService.ViewState>
@@ -171,16 +171,17 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:OrchestratorHttpRequest ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Orchestrator HTTP Request" sap:VirtualizedContainerService.HintSize="450,274" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_3" JSONPayload="[&quot;{Name:'&quot;+in_Name+&quot;',ValueScope: 'Global', ValueType: '&quot;+in_ValueType.ToString+&quot;',  CredentialUsername:'&quot;+ in_Username+&quot;',CredentialPassword:'&quot;+ in_Password+&quot;',StringValue: 'An asset added through an API call'}&quot;]" Method="POST" RelativeEndpoint="/odata/assets" Result="[str_asset]" StatusCode="[int_StatusCode]">
+          <ui:OrchestratorHttpRequest ResponseHeaders="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="which give the response into the string by taking input as endpoint url" DisplayName="Orchestrator HTTP Request" sap:VirtualizedContainerService.HintSize="450,316" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_3" JSONPayload="[&quot;{Name:'&quot;+in_Name+&quot;',ValueScope: 'Global', ValueType: '&quot;+in_ValueType.ToString+&quot;',  CredentialUsername:'&quot;+ in_Username+&quot;',CredentialPassword:'&quot;+ in_Password+&quot;',StringValue: 'An asset added through an API call'}&quot;]" Method="POST" RelativeEndpoint="/odata/assets" Result="[str_asset]" StatusCode="[int_StatusCode]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:OrchestratorHttpRequest>
           <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jObjectAsset]" JsonString="[str_asset]" />
-          <If Condition="[int_StatusCode &lt;&gt; 400]" sap:VirtualizedContainerService.HintSize="450,614" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[int_StatusCode &lt;&gt; 400]" DisplayName="If - to check the response code" sap:VirtualizedContainerService.HintSize="450,614" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
